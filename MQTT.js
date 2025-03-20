@@ -10,16 +10,16 @@ const options = {
 const client = mqtt.connect(options);
 
 client.on('connect', () => {
-    console.log("✅ Publisher connected to HiveMQ Cloud");
+    console.log(" Publisher connected to HiveMQ Cloud");
 
     const random = Math.random() * 50;
     const message = `HiveMQ Cloud MQTT Test: ${random.toFixed(2)}`;
 
     client.publish('Gokul', message, { qos: 0 }, (err) => {
         if (err) {
-            console.error("❌ Publish error:", err);
+            console.error("Publish error:", err);
         } else {
-            console.log("📤 Published:", message);
+            console.log("Published:", message);
         }
 
         client.end(); 
